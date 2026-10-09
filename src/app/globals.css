@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f7f9;
+  --foreground: #171717;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif;
+}
+
+/* フォーム部品の共通スタイル */
+.input {
+  @apply w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 sm:text-sm;
+}
+.label {
+  @apply mb-1 block text-sm font-medium text-gray-700;
+}
+.btn {
+  @apply inline-flex items-center justify-center gap-1 rounded-md px-4 py-2 text-sm font-medium transition disabled:opacity-50;
+}
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-1 rounded-md px-4 py-2 text-sm font-medium transition disabled:opacity-50 bg-blue-600 text-white hover:bg-blue-700;
+}
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-1 rounded-md px-4 py-2 text-sm font-medium transition disabled:opacity-50 border border-gray-300 bg-white text-gray-800 hover:bg-gray-50;
+}
+.btn-danger {
+  @apply inline-flex items-center justify-center gap-1 rounded-md px-4 py-2 text-sm font-medium transition disabled:opacity-50 border border-red-300 bg-white text-red-700 hover:bg-red-50;
+}
